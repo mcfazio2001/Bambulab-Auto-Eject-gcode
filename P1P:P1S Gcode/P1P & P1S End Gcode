@@ -266,17 +266,6 @@ G1 X128 Y250 F9000 ; Move back to the back (X128, Y160)
 
 ; ==== End Eject
 
-;M400 ; wait for all motion to complete
-;M17 S
-;M17 Z0.4 ; lower Z motor current to reduce impact if there is something in the bottom
-;{if (max_layer_z + 50.0) <= 230} ;*** Adjusted to prevent bed from lowering onto bed flexing fixture 
-;    G1 Z{max_layer_z + 50.0} F600
-;{else}
-;    G1 Z230 F600 ; Move to 230mm max, but do not lower beyond this point
-;{endif}
-;M400 P100
-;M17 R ; restore Z motor current
-
 
 M220 S100  ; Reset feedrate magnitude
 M201.2 K1.0 ; Reset acc magnitude
