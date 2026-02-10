@@ -1,0 +1,289 @@
+;===== date: 20230428 =====================***
+M400 ; wait for buffer to clear
+G92 E0 ; zero the extruder
+G1 E-0.8 F1800 ; retract
+G1 Z{max_layer_z + 0.5} F900 ; lower z a little
+G1 X65 Y245 F12000 ; move to safe pos 
+G1 Y265 F3000
+
+G1 X65 Y245 F12000
+G1 Y265 F3000
+M140 S0 ; turn off bed
+M106 S0 ; turn off fan
+M106 P2 S0 ; turn off remote part cooling fan
+M106 P3 S0 ; turn off chamber cooling fan
+
+G1 X100 F12000 ; wipe
+; pull back filament to AMS
+M620 S255
+G1 X20 Y50 F12000
+G1 Y-3
+T255
+G1 X65 F12000
+G1 Y265
+G1 X100 F12000 ; wipe
+M621 S255
+M104 S0 ; turn off hotend
+
+; ======== Auto-Eject with Bed Flex======== 
+G0 X128 Y250 ; move to middle back of bed
+G0 Z116 ; Move bed to ramp position to flex
+
+;===== Cool Down =======
+
+M106 P2 S255 ; turn on aux fan to cool bed quickly
+M106 S255 ;  turn on part fan
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+M190 S18	;wait for bed temp, Enter your own target cooldown temperature here
+
+
+M140 S0 ; turn off bed
+
+;G4 S600  ; Wait for 10 minutes (600 seconds)
+;G4 S600  ; Wait for another 10 minutes (600 seconds) Broken into 2 delays bc printer wont delay that long
+
+M106 P2 S0 ; turn off aux cooling fan
+
+; ===== Flex the bed three times =====
+G0 Z251 F5000 ; Lower bed to flex position (256mm - 5mm = 251mm)
+G0 Z236 F5000 ; Raise bed to above flex position (256mm - 20mm = 236mm)
+G0 Z251 F5000 ; Lower bed to flex position again
+G0 Z236 F5000 ; Raise bed to above flex position again
+G0 Z251 F5000 ; Lower bed to flex position again
+
+;G4 S600  ; Wait for another 10 minutes
+
+; ===== (Second) Flex the bed three times =====
+G0 Z251 F5000 ; Lower bed to flex position (256mm - 5mm = 251mm)
+G0 Z236 F5000 ; Raise bed to above flex position (256mm - 20mm = 236mm)
+G0 Z251 F5000 ; Lower bed to flex position again
+G0 Z236 F5000 ; Raise bed to above flex position again
+G0 Z251 F5000 ; Lower bed to flex position again
+
+; ===== Move bed to ejection height
+;G1 Z{max_layer_z - 36.84} F600 ; Auto calculation to raise bed
+
+{if max_layer_z <= 36.84}
+G1 Z5 F600 ; Safety height to avoid nozzle crash
+{else}
+G1 Z{max_layer_z - 36.84} F600 ; Auto calculation to raise bed
+{endif}
+
+
+
+; ===== Eject part (middle of the bed only)
+; First pass
+G0 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Second pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Third pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Fourth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Fith pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Sixth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Sevnth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Eigth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Nigth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y160 F9000 ; Move back to the back (X128, Y160)
+
+; Reset potential loss of steps
+M18 ; Disable motors temporarily
+M17 ; Re-enable motors to reset holding position
+
+G4 S60  ; Wait for another 10 seconds
+
+; ===== Eject Part attempt 2
+; First pass
+G0 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y200 F9000 ; Move back to the back (X128, Y160)
+
+; Second pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y230 F9000 ; Move back to the back (X128, Y160)
+
+; Third pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y250 F9000 ; Move back to the back (X128, Y160)
+
+; Fourth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y250 F9000 ; Move back to the back (X128, Y160)
+
+; Fith pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y250 F9000 ; Move back to the back (X128, Y160)
+
+; Sixth pass (repeat same middle movement)
+G1 X128 Y0 F9000 ; Move to the front (X128, Y0)
+G1 X128 Y250 F9000 ; Move back to the back (X128, Y160)
+
+
+; ==== End Eject
+
+;M400 ; wait for all motion to complete
+;M17 S
+;M17 Z0.4 ; lower Z motor current to reduce impact if there is something in the bottom
+;{if (max_layer_z + 50.0) <= 230} ;*** Adjusted to prevent bed from lowering onto bed flexing fixture 
+;    G1 Z{max_layer_z + 50.0} F600
+;{else}
+;    G1 Z230 F600 ; Move to 230mm max, but do not lower beyond this point
+;{endif}
+;M400 P100
+;M17 R ; restore Z motor current
+
+
+M220 S100  ; Reset feedrate magnitude
+M201.2 K1.0 ; Reset acc magnitude
+M73.2   R1.0 ;Reset left time magnitude
+M1002 set_gcode_claim_speed_level : 0
+
+M106 S0 ; turn off fan
+M106 P2 S0 ; turn off big fan
+M17 X0.8 Y0.8 Z0.5 ; lower motor current to 45% power
+M960 S5 P0 ; turn off logo lamp
